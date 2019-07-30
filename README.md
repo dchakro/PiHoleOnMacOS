@@ -1,6 +1,8 @@
-# Run Pihole locally on Mac inside a docker container
+# Run Pihole locally on your Mac
 
-Ads generate the revenue necessary for hosting content on the web and are a source of income that supports a lot of the developers. This seems innocuous at first however, when you think that a majority of these ads are used for tracking your web activity and in future are used in serving you even more advertisments tailored to you. It sounds diabolical, but this is the harsh reality of the web we use, and it was certainly something I did not want to participate in like many others. Therefore, I got inspired by a [Reddit thread](https://www.reddit.com/r/pihole/comments/9k6lzp/run_pihole_on_macos_mojave_with_docker/) by [/u/dudutwizer](https://www.reddit.com/user/dudutwizer/) to install [pihole](https://pi-hole.net) on my mac.
+Ads generate the revenue necessary for hosting content on the web and are a source of income that supports a lot of the developers. This seems innocuous at first however, when you think that a majority of these ads are used for tracking your web activity and in future are used in serving you even more advertisments tailored to you. It sounds diabolical, but this is the harsh reality of the web we use, and it was certainly something I did not want to participate in like many others. 
+
+Therefore, I got inspired by a [Reddit thread](https://www.reddit.com/r/pihole/comments/9k6lzp/run_pihole_on_macos_mojave_with_docker/) from the user [/u/dudutwizer](https://www.reddit.com/user/dudutwizer/) and installed [pihole](https://pi-hole.net) inside a [Docker](https://en.wikipedia.org/wiki/Docker_(software)) container on my iMac running MacOS Mojave. This method should work on all devices running MacOS.
 
 ## 1. Install Docker on your Mac
 A. Register for a free [dockerhub](https://hub.docker.com/signup) account if you don't have one already.
@@ -69,9 +71,13 @@ docker run -d --name pihole -e ServerIP=192.168.0.10 -e TZ=Europe/Helsinki -e WE
 ```
 The ```--restart=unless-stopped``` parameter ensures that pihole starts up when your mac reboots, provided you did not stop pihole manually.
 
-To change the login password specfied above you can also run 
+If you ever wish to change the ```WEBPASSWORD``` you specfied above (since the above command will stay readable in your shell’s history) you can also run :
 ```sh
 docker exec -it pihole pihole -a -p new_password
+# Or
+docker exec -it pihole /bin/bash
+pihole -a -p
+# Now you can set a new password
 ```
 
 
