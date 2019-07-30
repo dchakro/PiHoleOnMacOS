@@ -56,7 +56,9 @@ Go to:   → System Preferences → Network → chose your primary interface 
 
 ## 3. Execute docker. Fill in your IP and a password :
 
-Run Docker (fill in IP to your local IP and Password to your password..)
+Run Docker (fill in IP to your local IP and Password to your password.)
+The ```docker run``` command below uses[Cloudflare DNS](https://1.1.1.1/dns/), but you can use any of the available [public dns resolvers](https://en.wikipedia.org/wiki/Public_recursive_name_server), [public DNS resolvers hosted by individuals](https://public-dns.info/), or even your self-hoster DNS resolvers as the Upstream DNS resolver for pihole. 
+If you want you can use [DNSSpeedTester](https://github.com/robocopAlpha/DNSSpeedTester), my R script, to compare the latency and performance of different DNS resolvers from your location and pick the that is best for you. Cloudflare was the fastest for my location; YMMV.
 
 ```sh
 # Minimal command
@@ -65,6 +67,7 @@ docker run -d --name pihole -e ServerIP=YourIP -e WEBPASSWORD="YourPassword" -e 
 # Recommended command
 docker run -d --name pihole -e ServerIP=192.168.0.10 -e TZ=Europe/Helsinki -e WEBPASSWORD=SecretAgent007 -e DNS1=1.1.1.1 -e DNS2=1.0.0.1 -p 80:80 -p 53:53/tcp -p 53:53/udp -p 443:443 -v ~/pihole/:/etc/pihole/ --dns=127.0.0.1 --dns=1.1.1.1 --cap-add=NET_ADMIN --restart=unless-stopped pihole/pihole:latest
 ```
+The ```--restart=unless-stopped``` parameter ensures that pihole starts up when your mac reboots, provided you did not stop pihole manually.
 
 To change the login password specfied above you can also run 
 ```sh
@@ -79,7 +82,9 @@ docker ps # should list the pihole container
 docker exec pihole pihole status
 ```
 
-## 5. Change the Local DNS to your docker : 
+## 5. Change the DNS on your network interface to your pihole : 
+
+Now that pihole is up and running, we can use it to filter and resolve DNS queries.
 
 #### CUI
 
