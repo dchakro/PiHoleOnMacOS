@@ -239,11 +239,11 @@ PADD looks like this:
 
 ## Enable DNSSEC
 
-To secure your DNS traffic, DNSSEC is not the optimal step (due to [issues](https://github.com/pi-hole/pi-hole/issues/2658)), but generally speaking it is a step in the right direction.
+To completely secure your DNS traffic, DNSSEC is not the optimal step (due to [issues](https://github.com/pi-hole/pi-hole/issues/2658)), but generally speaking, it is a step in the right direction.
 
-And., it’s very simple to enable on a pihole:
+And, it’s very simple to enable on a pihole:
 
-Log in as admin to your pihole (http://127.0.0.1/admin) → Settings → DNS → Scroll all the way to the botton → DNSSEC. 
+Log in as admin to your pihole (http://127.0.0.1/admin) → Settings → DNS → Scroll all the way to the botton → *Mark the check box saying* "Use DNSSEC” → *Click the* “Save” *button (bottom right)*.
 
 Test if your pihole has a working DNSSEC by using this [DNSSEC resolver test](http://dnssec.vs.uni-due.de).
 
@@ -251,4 +251,4 @@ Also it is possible to run PADD and check if DNSSEC is enabled.
 
 ![adu4k9f8gsd7djb2321n4](assets/adu4k9f8gsd7djb2321n4.png)
 
-Note: A more secure approach would be to use [DNS over HTTPS](https://docs.pi-hole.net/guides/dns-over-https/). 
+**Note:** To really secure your DNS requests an ideal approach would be to set up and use [DNS over HTTPS](https://docs.pi-hole.net/guides/dns-over-https/) with pihole. 
