@@ -162,7 +162,9 @@ Some blocklists you can investigate are:
 
 # Miscellaneous info:
 
-## To stop running run the pihole:
+## To stop running pihole:
+
+In case pihole starts to malfunction and you need to take it down for maintainence or if you wish to turn off pihole all together you need to run: 
 
 ```sh
 docker stop pihole
