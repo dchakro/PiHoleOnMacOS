@@ -228,10 +228,11 @@ PADD stands for Pi-hole® Ad Detection Display. To run and install you need to e
 
 ```sh
 docker exec -it pihole /bin/bash # logs you in as root to your pihole container
-cd /usr/bin
+
 wget -N https://raw.githubusercontent.com/jpmck/PADD/master/padd.sh
-mv padd.sh padd
+sudo mv padd.sh padd
 chmod 755 padd
+sudo mv padd /usr/bin/padd
 
 cp padd /etc/pihole/padd # You can run this command to keep padd on your ~/pihole in case you decide to re-install pihole. Note: This only works if you used the -v ~/pihole/:/etc/pihole/ parameter while running the pihole docker. )
 
