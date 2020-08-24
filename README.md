@@ -60,7 +60,7 @@ Go to:   → System Preferences → Network → chose your primary interface 
 
 Run Docker (fill in IP to your local IP and Password to your password.)
 The ```docker run``` command below uses[Cloudflare DNS](https://1.1.1.1/dns/), but you can use any of the available [public dns resolvers](https://en.wikipedia.org/wiki/Public_recursive_name_server), [public DNS resolvers hosted by individuals](https://public-dns.info/), or even your self-hoster DNS resolvers as the Upstream DNS resolver for pihole. 
-If you want you can use [DNSSpeedTester](https://github.com/robocopAlpha/DNSSpeedTester), my R script, to compare the latency and performance of different DNS resolvers from your location and pick the that is best for you. Cloudflare was the fastest for my location; YMMV.
+If you want you can use [DNSSpeedTester](https://github.com/dchakro/DNSSpeedTester), my R script, to compare the latency and performance of different DNS resolvers from your location and pick the that is best for you. Cloudflare was the fastest for my location; YMMV.
 
 ```sh
 # Minimal command
