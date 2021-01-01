@@ -261,3 +261,7 @@ Also it is possible to run PADD and check if DNSSEC is enabled.
 ![adu4k9f8gsd7djb2321n4](assets/adu4k9f8gsd7djb2321n4.png)
 
 **Note:** To really secure your DNS requests an ideal approach would be to set up and use [DNS over HTTPS](https://docs.pi-hole.net/guides/dns-over-https/) with pihole. 
+
+## More tips and tricks with pihole
+
+I collected a few of my favorite tips and tricks to use with pihole on [my website](https://tips.dchakro.com/docs/pihole/).
